@@ -1,0 +1,61 @@
+(295, 
+Tweet(
+    url='https://twitter.com/aimansalim_/status/1595727173520101377', 
+    
+    date=datetime.datetime(2022, 11, 24, 10, 33, tzinfo=datetime.timezone.utc), 
+    
+    rawContent='macam mana najib ni duduk dalam jail pun boleh tweet lagi? tam pamham amkum', 
+    
+    renderedContent='macam mana najib ni duduk dalam jail pun boleh tweet lagi? tam pamham amkum', 
+    
+    id=1595727173520101377, 
+    
+    user=User(username='aimansalim_', id=469191314, displayname='bangman', rawDescription='Hanya ingin menjadi seorang manusia yang lebih baik daripada sebelumnya', renderedDescription='Hanya ingin menjadi seorang manusia yang lebih baik daripada sebelumnya', descriptionLinks=None, verified=False, created=datetime.datetime(2012, 1, 20, 10, 12, 24, tzinfo=datetime.timezone.utc), followersCount=293453, friendsCount=7021, statusesCount=78135, favouritesCount=4671, listedCount=95, mediaCount=5278, location='', protected=None, link=TextLink(text='linktr.ee/aimansalim', url='https://linktr.ee/aimansalim', tcourl='https://t.co/DfmS5subSw', indices=(0, 23)), profileImageUrl='https://pbs.twimg.com/profile_images/1511365417008132098/UOU8d016_normal.jpg', profileBannerUrl='https://pbs.twimg.com/profile_banners/469191314/1622279945', label=None), 
+    
+    replyCount=51, 
+    
+    retweetCount=1602, 
+    
+    likeCount=5001, 
+    
+    quoteCount=68, 
+    
+    conversationId=1595727173520101377, 
+    
+    lang='in', 
+    
+    source=None, 
+    
+    sourceUrl=None, 
+    
+    sourceLabel=None, 
+    
+    links=None, media=None, 
+    
+    retweetedTweet=None, 
+    
+    quotedTweet=None, 
+    
+    inReplyToTweetId=None, 
+    
+    inReplyToUser=None, 
+    
+    mentionedUsers=None, 
+    
+    coordinates=None, 
+    
+    place=None, 
+    
+    hashtags=None, 
+    
+    cashtags=None, 
+    
+    card=None, 
+    
+    viewCount=None, 
+    
+    vibe=None, 
+    
+    bookmarkCount=16, 
+    
+    pinned=None))

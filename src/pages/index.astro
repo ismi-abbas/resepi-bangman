@@ -1,15 +1,26 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import SearchBar from "../components/SearchBar.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Resepi Bangman">
+  <main>
+    <div class="flex items-center justify-center gap-4 mt-8 mb-2">
+      <div class="block">
+        <h1 class="text-5xl font-bold">Resepi Bangman</h1>
+      </div>
+
+      <div class="avatar">
+        <div class="w-24 rounded-full">
+          <a href="https://twitter.com/aimansalim_" target="_blank">
+            <img src="/bangman.jpg" alt="Bangman(Aiman Salim)" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <SearchBar />
+    </div>
+  </main>
+</Layout>
