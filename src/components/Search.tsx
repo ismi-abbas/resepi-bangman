@@ -42,38 +42,44 @@ function Search({ searchList }: { searchList: any }) {
         )}
       </div>
 
+      <div className="mx-10">
+        <h1 className="text-xl font-semibold">
+          Disclaimer: Site belum siap sepenuhnya
+        </h1>
+      </div>
+
       <div className="mt-4 px-10">
         {query.length < 2 ? (
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {searchList.map((item: any) => (
               <div className="card card-compact w-96 bg-base-100 shadow-md">
                 <figure className="w-auto h-48">
                   <img
                     src={item.thumbnailUrl}
-                    alt="Shoes"
+                    alt=""
                     className="object-cover"
                   />
                 </figure>
                 <div className="card-body">
-                  <p>{item.content}!</p>
+                  <a href={item.url}>{item.content}</a>
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {allResepi &&
               allResepi.map((resepi: any) => (
-                <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                <div className="card card-compact w-96 bg-base-100 shadow-md">
                   <figure className="w-auto h-48">
                     <img
                       src={resepi.thumbnailUrl}
-                      alt="Shoes"
+                      alt=""
                       className="object-cover"
                     />
                   </figure>
                   <div className="card-body">
-                    <p>{resepi.content}!</p>
+                    <a href={resepi.url}>{resepi.content}</a>
                   </div>
                 </div>
               ))}
