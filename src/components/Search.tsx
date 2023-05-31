@@ -44,32 +44,38 @@ function Search({ searchList }: { searchList: any }) {
 
       <div className="mt-4 px-10">
         {query.length < 2 ? (
-          <div>
+          <div className="grid grid-cols-3 gap-4">
             {searchList.map((item: any) => (
-              <li key={item.tweetId}>
-                <a
-                  href={item.url}
-                  target="_blank"
-                  className="hover:underline-offset-2 hover:underline text-lg"
-                >
-                  {item.content}
-                </a>
-              </li>
+              <div className="card card-compact w-96 bg-base-100 shadow-md">
+                <figure className="w-auto h-48">
+                  <img
+                    src={item.thumbnailUrl}
+                    alt="Shoes"
+                    className="object-cover"
+                  />
+                </figure>
+                <div className="card-body">
+                  <p>{item.content}!</p>
+                </div>
+              </div>
             ))}
           </div>
         ) : (
-          <div className="leading-loose">
+          <div className="grid grid-cols-3 gap-4">
             {allResepi &&
               allResepi.map((resepi: any) => (
-                <li>
-                  <a
-                    href={resepi.url}
-                    target="_blank"
-                    className="hover:underline-offset-2 hover:underline text-lg"
-                  >
-                    {resepi.content}
-                  </a>
-                </li>
+                <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                  <figure className="w-auto h-48">
+                    <img
+                      src={resepi.thumbnailUrl}
+                      alt="Shoes"
+                      className="object-cover"
+                    />
+                  </figure>
+                  <div className="card-body">
+                    <p>{resepi.content}!</p>
+                  </div>
+                </div>
               ))}
           </div>
         )}
