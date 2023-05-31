@@ -1,6 +1,5 @@
 import Fuse from "fuse.js";
 import { useState } from "react";
-import React from "react";
 
 const options = {
   keys: ["content", "decription"],
@@ -59,12 +58,12 @@ function Search({ searchList }: { searchList: any }) {
             ))}
           </div>
         ) : (
-          <div>
+          <div className="leading-loose">
             {allResepi &&
               allResepi.map((resepi: any) => (
                 <li>
                   <a
-                    href={`/${resepi?.url}`}
+                    href={resepi.url}
                     target="_blank"
                     className="hover:underline-offset-2 hover:underline text-lg"
                   >

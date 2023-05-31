@@ -19,7 +19,7 @@ for i in enumerate(sntwitter.TwitterSearchScraper("from:@aimansalim_").get_items
             ]
         )
 
-    if i[0] > 100000:
+    if i[0] > 10:
         break
 
 

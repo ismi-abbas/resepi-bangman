@@ -16,13 +16,18 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="container mx-auto">
+  <body class="flex min-h-screen flex-col max-w-screen-xl mx-auto">
     <slot />
+
+    <footer
+      class="text-md mt-4 text-center py-4 bg-primary text-gray-800 bottom-0"
+    >
+      Resepi Bangman by
+      <span
+        >@<span
+          ><a href="https://ismi-abbas.com" target="_blank">ismi-abbas</a></span
+        ></span
+      >
+    </footer>
   </body>
-  <footer class="text-md mt-4 text-center py-4 bg-primary text-gray-800">
-    Resepi Bangman by
-    <span
-      >@<a href="https://ismi-abbas.com" target="_blank"> ismi-abbas</a>
-    </span>
-  </footer>
 </html>
