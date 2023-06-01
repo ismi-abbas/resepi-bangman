@@ -1,8 +1,9 @@
 import Fuse from "fuse.js";
 import { useState } from "react";
+import Card from "./Card";
 
 const options = {
-  keys: ["content", "decription"],
+  keys: ["content"],
   includeMatches: true,
   minMatchCharLength: 2,
   threshold: 0.5,
@@ -24,7 +25,8 @@ function Search({ searchList }: { searchList: any }) {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col mt-4 px-8">
+      {/* Search Bar */}
+      <div className="flex flex-col mt-4 items-center px-14 md:px-0">
         <input
           type="text"
           name="search"
@@ -32,58 +34,21 @@ function Search({ searchList }: { searchList: any }) {
           value={query}
           onChange={(e) => handleOnSearch(e.target.value)}
           placeholder="Cari resepi"
-          className="input input-bordered input-primary w-full"
+          className="input input-primary w-full md:w-1/2"
         />
 
         {query.length > 1 && (
-          <p className="mt-2 font-medium">
+          <p className="mt-2 font-medium max-w-lg overflow-clip w-full md:w-1/2">
             {allResepi.length} resepi dijumpai untuk kata kunci carian '{query}'
           </p>
         )}
       </div>
 
-      <div className="mx-10">
-        <h1 className="text-xl font-semibold">
-          Disclaimer: Site belum siap sepenuhnya
-        </h1>
-      </div>
-
-      <div className="mt-4 px-10">
+      <div className="mt-4 px-10 flex flex-col items-center">
         {query.length < 2 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {searchList.map((item: any) => (
-              <div className="card card-compact w-96 bg-base-100 shadow-md">
-                <figure className="w-auto h-48">
-                  <img
-                    src={item.thumbnailUrl}
-                    alt=""
-                    className="object-cover"
-                  />
-                </figure>
-                <div className="card-body">
-                  <a href={item.url}>{item.content}</a>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Card items={searchList} />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {allResepi &&
-              allResepi.map((resepi: any) => (
-                <div className="card card-compact w-96 bg-base-100 shadow-md">
-                  <figure className="w-auto h-48">
-                    <img
-                      src={resepi.thumbnailUrl}
-                      alt=""
-                      className="object-cover"
-                    />
-                  </figure>
-                  <div className="card-body">
-                    <a href={resepi.url}>{resepi.content}</a>
-                  </div>
-                </div>
-              ))}
-          </div>
+          <Card items={allResepi} />
         )}
       </div>
 

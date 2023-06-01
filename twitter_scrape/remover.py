@@ -13,8 +13,11 @@ def clean_up_json(file_path):
                 with open(file_path, "w") as jsonFile:
                     jsonFile.write(json.dumps(json_data, indent=2))
             # check if content containt https://t.co/ - remove the https://t.co/ until end of line from content
-            if "https://t.co/" in data["content"]:
-                data["content"] = data["content"].split("https://t.co/")[0]
+            if "https:" in data["content"]:
+                data["content"] = data["content"].split("https")[0].strip()
                 # write data to json file
                 with open(file_path, "w") as jsonFile:
                     jsonFile.write(json.dumps(json_data, indent=2))
+
+
+clean_up_json("twitter_bangman.json")
