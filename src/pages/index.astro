@@ -4,15 +4,17 @@ import SearchBar from "../components/SearchBar.astro";
 ---
 
 <Layout title="Resepi Bangman">
-  <main>
-    <div class="flex items-center justify-center mt-8 mb-2 mx-4 md:mx-0">
-      <div class="md:p-0 md:w-auto">
+  <main class="flex flex-col items-center">
+    <div
+      class="flex items-center justify-center md:gap-4 md: md:justify-evenly md:max-w-lg mt-8 mb-2 mx-4 md:mx-0 flex-wrap"
+    >
+      <div>
         <h1 class="text-5xl font-bold">Resepi Bangman</h1>
-        <p>Koleksi masakan Bangman dari Twitter</p>
+        <p class="text-md font-base">Koleksi masakan Bangman dari Twitter</p>
       </div>
 
-      <div class="avatar">
-        <div class="w-24 rounded-full">
+      <div class="md:avatar hidden">
+        <div class="w-24 rounded-full shadow-md">
           <a href="https://twitter.com/aimansalim_" target="_blank">
             <img src="/bangman.jpg" alt="Bangman(Aiman Salim)" />
           </a>

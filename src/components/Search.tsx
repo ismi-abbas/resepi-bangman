@@ -7,6 +7,7 @@ const options = {
   includeMatches: true,
   minMatchCharLength: 2,
   threshold: 0.5,
+  shouldSort: true,
 };
 
 function Search({ searchList }: { searchList: any }) {
@@ -17,7 +18,7 @@ function Search({ searchList }: { searchList: any }) {
   const allResepi = fuse
     .search(query)
     .map((result) => result.item)
-    .slice(0, 10);
+    .slice(0, 15);
 
   function handleOnSearch(value: string) {
     setQuery(value);
@@ -37,9 +38,10 @@ function Search({ searchList }: { searchList: any }) {
           className="input input-primary w-full md:w-1/2"
         />
 
-        {query.length > 1 && (
-          <p className="mt-2 font-medium max-w-lg overflow-clip w-full md:w-1/2">
-            {allResepi.length} resepi dijumpai untuk kata kunci carian '{query}'
+        {query.length > 0 && (
+          <p className="mt-2 font-base max-w-lg overflow-clip w-full md:w-1/2">
+            {allResepi.length} resepi dijumpai untuk kata kunci carian{" "}
+            <b>'{query}'</b>
           </p>
         )}
       </div>
@@ -52,8 +54,8 @@ function Search({ searchList }: { searchList: any }) {
         )}
       </div>
 
-      <div className="mt-2 px-8 text-lg">
-        <h3>Jumlah resepi terkini: {searchList.length}</h3>
+      <div className="mt-2 text-lg font-medium">
+        <h3>Jumlah resepi: {searchList.length}</h3>
       </div>
     </div>
   );
