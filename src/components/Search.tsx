@@ -44,7 +44,7 @@ function Search({ searchList }: { searchList: any }) {
         )}
       </div>
 
-      <div className="mt-4 px-10 flex flex-col items-center">
+      <div className="mt-4 flex flex-col items-center">
         {query.length < 2 ? (
           <Card items={searchList} />
         ) : (
