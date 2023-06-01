@@ -1,1 +1,0 @@
-<generator object TwitterUserScraper.get_items at 0x103f78900>

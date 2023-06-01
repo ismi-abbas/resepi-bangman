@@ -1,15 +1,12 @@
 import snscrape.modules.twitter as sntwitter
 import pandas as pd
-import re
+import convert_to
+import remover
 
-pattern = r"url='(.*?)'"
-
-# Created a list to append all tweet attributes(data)
 attributes_container = []
 
-# Using TwitterSearchScraper to scrape data and append tweets to list
+print("Scraping twitter...")
 for i in enumerate(sntwitter.TwitterSearchScraper("from:@aimansalim_").get_items()):
-    # find tweet that contain https://t.co/
     if "https://t.co/" in i[1].rawContent:
         attributes_container.append(
             [
@@ -22,7 +19,7 @@ for i in enumerate(sntwitter.TwitterSearchScraper("from:@aimansalim_").get_items
             ]
         )
 
-    if i[0] > 1000:
+    if i[0] > 10000:
         break
 
 
@@ -41,3 +38,11 @@ tweets_df = pd.DataFrame(
 
 # Converting dataframe to csv file order by created date
 tweets_df.to_csv("twitter_bangman.csv", index=True, header=True)
+
+# Converting csv file to json file
+print("Converting csv to json...")
+convert_to.convert_csv_to_json("twitter_bangman.csv", "twitter_bangman.json")
+
+# Clean up json file
+print("Cleaning up json...")
+remover.clean_up_json("twitter_bangman.json")
